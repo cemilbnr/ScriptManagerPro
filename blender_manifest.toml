@@ -1,0 +1,17 @@
+schema_version = "1.0.0"
+
+id = "script_manager_pro"
+version = "0.0.3"
+name = "Script Manager Pro"
+tagline = "Manage and run Python scripts with one-click access"
+maintainer = "Cemil Berk <cemildesign@hotmail.com>"
+type = "add-on"
+
+blender_version_min = "4.4.0"
+
+license = [
+  "SPDX:GPL-3.0-or-later",
+]
+
+[permissions]
+files = "Reads and writes script metadata to a JSON file"
