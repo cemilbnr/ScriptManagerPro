@@ -1,11 +1,13 @@
 schema_version = "1.0.0"
 
 id = "script_manager_pro"
-version = "0.0.3"
+version = "1.0.0"
 name = "Script Manager Pro"
-tagline = "Manage and run Python scripts with one-click access"
-maintainer = "Cemil Berk <cemildesign@hotmail.com>"
+tagline = "Organize, edit and run external Python scripts from disk"
+maintainer = "Cemil Berk"
 type = "add-on"
+
+tags = ["Development"]
 
 blender_version_min = "4.4.0"
 
@@ -14,4 +16,4 @@ license = [
 ]
 
 [permissions]
-files = "Reads and writes script metadata to a JSON file"
+files = "Read, run and save scripts in the selected library folder"

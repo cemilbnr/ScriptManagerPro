@@ -1,76 +1,153 @@
-# Script Manager Pro
+<p align="center">
+  <img src="docs/hero.jpg" alt="Script Manager Pro" width="100%">
+</p>
 
-A Blender add-on for managing and running external Python scripts with one-click access, favorites, tags, and in-panel metadata editing.
+<p align="center">
+  <img src="https://img.shields.io/badge/Blender-4.4%2B-orange?logo=blender&logoColor=white" alt="Blender 4.4+">
+  <img src="https://img.shields.io/badge/Version-1.0.0-blue" alt="Version 1.0.0">
+  <img src="https://img.shields.io/badge/License-GPL--3.0-green" alt="GPL-3.0">
+  <img src="https://img.shields.io/badge/Dependencies-none-lightgrey" alt="No dependencies">
+</p>
 
-![Blender](https://img.shields.io/badge/Blender-4.4%2B-orange)
-![Version](https://img.shields.io/badge/Version-0.0.3-blue)
-![License](https://img.shields.io/badge/License-GPL--3.0-green)
+<p align="center">
+  Keep your Python scripts as plain <code>.py</code> files on disk.<br>
+  Run them, edit them and save them back, all from a sidebar in Blender.
+</p>
+
+<!-- GIF 1: Hero. 3D Viewport sidebar, click Play on a script, it runs. 5-8 sec. -->
+<p align="center">
+  <img src="docs/gifs/overview.gif" alt="Overview" width="800">
+</p>
+
+---
 
 ## Features
 
-- **One-Click Script Execution** - Run any Python script directly from the sidebar panel
-- **Open in Text Editor** - Quickly open scripts in Blender's built-in text editor
-- **Favorites** - Mark frequently used scripts for quick access and filter by favorites
-- **Custom Tags** - Add tags to scripts for categorization and filtering
-- **Custom Display Names** - Set friendly names for your scripts
-- **In-Panel Editing** - Edit script metadata (tags, display name) without leaving the panel
-- **Persistent Metadata** - All favorites, tags, and display names are saved across sessions
-- **Open Scripts Folder** - Quick access to your scripts directory from the panel
+| Feature | What it does |
+|---------|--------------|
+| **One-click run** | Run any script from the sidebar in the 3D Viewport or the Text Editor |
+| **Edit & save back** | Open a script in the Text Editor, edit it, and write it back to the `.py` file with **Update & Save** or **Save & Run** |
+| **Automatic backups** | Every save keeps a copy of the previous version (on by default) |
+| **Multiple folders** | Add as many library folders as you want. Subfolders are scanned too |
+| **Tags & favorites** | Group scripts with comma separated tags, star the ones you use most |
+| **Search** | Separate search fields for folders, tags and scripts |
+| **Portable metadata** | Tags, favorites and names live next to your scripts in `.script_manager/metadata.json` |
+| **Safe by design** | Runs files with Blender's own `script.python_file_run`. No `exec()`, no `eval()`, no scanning on startup |
+
+## Workflow
+
+```mermaid
+flowchart LR
+    A[Script folders<br>on disk] -->|Refresh| B[Script list<br>tags · favorites · search]
+    B -->|Run| C[Runs in Blender]
+    B -->|Open| D[Text Editor]
+    D -->|Update & Save| A
+    D -->|Save & Run| C
+    D -.->|backup| E[(.script_manager/backups)]
+```
 
 ## Installation
 
-### As Blender Extension (Recommended)
-1. Download the latest release `.zip`
-2. In Blender, go to **Edit > Preferences > Get Extensions**
-3. Click the dropdown arrow and select **Install from Disk**
-4. Select the downloaded `.zip` file
-
-### Manual Installation
-1. Clone or download this repository
-2. Copy the `script_manager_pro` folder to your Blender extensions directory
+1. Download the latest `.zip` from [Releases](../../releases).
+2. In Blender: **Edit ▸ Preferences ▸ Get Extensions ▸ ⌄ ▸ Install from Disk…**
+3. Pick the `.zip`, then enable **Script Manager Pro**.
 
 ## Setup
 
-1. After installation, go to **Edit > Preferences > Add-ons**
-2. Find **Script Manager Pro** and expand it
-3. Set the **Scripts Folder Path** to the directory containing your Python scripts
-4. Open the **3D Viewport** sidebar (press `N`) and find the **Script Manager** tab
+1. Press `N` in the 3D Viewport and open the **Script Manager** tab.
+2. Click **Add Folder** and point it to a folder with your `.py` scripts.
+3. Press **Refresh**. Done.
+
+<!-- GIF 2: Setup. Add Folder, pick a path, press Refresh, list fills up. -->
+<p align="center">
+  <img src="docs/gifs/setup.gif" alt="Setup" width="800">
+</p>
 
 ## Usage
 
-1. Click **Refresh List** to scan your scripts folder
-2. Each script appears with action buttons:
-   - **Play** - Execute the script
-   - **Text** - Open in Blender's text editor
-   - **Star** - Toggle favorite status
-   - **Pencil** - Edit metadata (display name, tags)
-3. Use the **Tags** filter to find scripts by tag
-4. Toggle **Favorites** to show only starred scripts
+### Run scripts
 
-## Project Structure
+Every row in the **Scripts** list has four buttons:
+
+| Button | Action |
+|--------|--------|
+| Star | Toggle favorite |
+| Play | Run the script from disk |
+| Text | Open in Text Editor |
+| Gear | Script settings: display name and tags |
+
+### Edit scripts in the Text Editor
+
+**Open in Text Editor** reuses an existing Text Editor or splits the current area to create one. The sidebar there gets an extra box for the open file:
+
+| Button | Action |
+|--------|--------|
+| **Update & Save** | Write your edits back to the `.py` file on disk |
+| **Save & Run** | Save, then run the file |
+| **Reload from Disk** | Discard edits and reload the file |
+| **Close** | Remove the text block from the `.blend`, the file on disk is kept |
+| **Save as .py…** | Save a brand new text into a script folder and add it to the library |
+
+<!-- GIF 3: Edit workflow. Open in Text Editor, change a line, Update & Save, then Play. 10-15 sec. Most important GIF. -->
+<p align="center">
+  <img src="docs/gifs/edit-and-save.gif" alt="Edit and save" width="800">
+</p>
+
+### Tags & favorites
+
+- Open a script's **settings (gear icon)** and type tags separated by commas, e.g. `rigging, utils`.
+- Or press **+** in the **Tags** panel to create an empty tag first.
+- Click a tag to filter the list. Double-click a tag to rename it everywhere.
+- **Favorites** and **Untagged** are always available as quick filters.
+
+<!-- GIF 4: Tags. Open settings, add tags, click tag in Tags panel to filter, star a favorite, switch to Favorites. -->
+<p align="center">
+  <img src="docs/gifs/tags.gif" alt="Tags and favorites" width="800">
+</p>
+
+### Multiple folders
+
+With more than one folder configured, a **Folders** panel appears. Pick a folder to limit the Tags and Scripts lists to that library, or **All** to see everything.
+
+<!-- GIF 5 (optional): Folders. Switch between folders, counts update. -->
+<p align="center">
+  <img src="docs/gifs/folders.gif" alt="Folders" width="800">
+</p>
+
+## Preferences
+
+**Edit ▸ Preferences ▸ Add-ons ▸ Script Manager Pro**
+
+| Setting | Description |
+|---------|-------------|
+| **Script Folders** | Library folders, scanned recursively on Refresh |
+| **Backup on Save** | Keep a copy of the old file before **Update & Save** overwrites it |
+| **Keep Backups** | How many backups to keep per script (default 10) |
+
+Backups are stored in `<folder>/.script_manager/backups/`.
+
+## What goes where
 
 ```
-script_manager_pro/
-├── __init__.py              # Main add-on code
-├── blender_manifest.toml    # Blender extension manifest
-└── README.md
+my_scripts/                     ← a library folder you added
+├── cleanup_scene.py
+├── rig_helpers/
+│   └── mirror_bones.py         ← subfolders are scanned too
+└── .script_manager/            ← created by the add-on
+    ├── metadata.json           ← tags, favorites, display names
+    └── backups/                ← previous versions of saved scripts
 ```
 
 ## Permissions
 
 | Permission | Reason |
 |------------|--------|
-| `files` | Reads and writes script metadata to a JSON file |
-
-## Requirements
-
-- Blender 4.4.0 or later
-- No external Python dependencies
+| `files` | Read, run and save scripts in the selected library folders |
 
 ## License
 
 [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.html)
 
-## Author
-
-**Cemil Berk** - [cemilbnr](https://github.com/cemilbnr)
+<p align="center">
+  Made by <a href="https://github.com/cemilbnr"><b>Cemil Berk</b></a>
+</p>
