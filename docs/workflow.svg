@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" font-family="Segoe UI, Inter, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#e87d0d"/>
+    </marker>
+    <marker id="arrow-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#7c808a"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="320" rx="16" fill="#1f2126"/>
+
+  <!-- Boxes -->
+  <g font-size="18" font-weight="600" fill="#e6e8ee" text-anchor="middle">
+    <!-- Disk -->
+    <rect x="60" y="110" width="220" height="100" rx="12" fill="#2c2f35" stroke="#3d4048" stroke-width="2"/>
+    <text x="170" y="152">Script folders</text>
+    <text x="170" y="180" font-size="14" font-weight="400" fill="#b8bcc6">plain .py files on disk</text>
+
+    <!-- List -->
+    <rect x="420" y="110" width="220" height="100" rx="12" fill="#2c2f35" stroke="#e87d0d" stroke-width="2"/>
+    <text x="530" y="152">Script list</text>
+    <text x="530" y="180" font-size="14" font-weight="400" fill="#b8bcc6">tags, favorites, search</text>
+
+    <!-- Run -->
+    <rect x="920" y="40" width="220" height="80" rx="12" fill="#e87d0d"/>
+    <text x="1030" y="88" fill="#ffffff">Runs in Blender</text>
+
+    <!-- Editor -->
+    <rect x="920" y="200" width="220" height="80" rx="12" fill="#2c2f35" stroke="#3d4048" stroke-width="2"/>
+    <text x="1030" y="248">Text Editor</text>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#e87d0d" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <!-- disk -> list -->
+    <path d="M280 160 L418 160"/>
+    <!-- list -> run -->
+    <path d="M640 145 C 780 145, 780 80, 918 80"/>
+    <!-- list -> editor -->
+    <path d="M640 175 C 780 175, 780 240, 918 240"/>
+    <!-- editor -> run (save & run) -->
+    <path d="M1030 200 L1030 122"/>
+  </g>
+  <!-- editor -> disk (update & save), back along the bottom -->
+  <path d="M920 262 L880 262 C 850 262, 850 300, 820 300 L200 300 C 180 300, 170 292, 170 278 L170 212" stroke="#7c808a" stroke-width="3" fill="none" stroke-dasharray="8 6" marker-end="url(#arrow-grey)"/>
+
+  <!-- Arrow labels -->
+  <g font-size="14" fill="#b8bcc6" text-anchor="middle">
+    <text x="349" y="150">Refresh</text>
+    <text x="780" y="98">Run</text>
+    <text x="780" y="228">Open in Text Editor</text>
+    <text x="1075" y="166" text-anchor="start">Save &amp; Run</text>
+    <text x="510" y="290">Update &amp; Save  (a backup is kept)</text>
+  </g>
+</svg>

@@ -17,3 +17,13 @@ license = [
 
 [permissions]
 files = "Read, run and save scripts in the selected library folder"
+
+[build]
+paths_exclude_pattern = [
+  "__pycache__/",
+  "/.git/",
+  "/.gitignore",
+  "/docs/",
+  "/README.md",
+  "*.zip",
+]

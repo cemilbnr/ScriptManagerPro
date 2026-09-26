@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="600" viewBox="0 0 1800 600" font-family="Segoe UI, Inter, Helvetica, Arial, sans-serif">
+  <defs>
+    <!-- document icon -->
+    <g id="doc">
+      <path d="M0 0 H50 L72 22 V100 H0 Z" fill="#c9ccd3"/>
+      <path d="M50 0 V22 H72 Z" fill="#8a8e97"/>
+    </g>
+    <!-- star outline / filled -->
+    <polygon id="star" points="16,0 20.7,10.4 32,11.6 23.5,19.3 26,30.6 16,24.8 6,30.6 8.5,19.3 0,11.6 11.3,10.4"/>
+    <!-- action buttons: play, document, gear -->
+    <g id="btn-play">
+      <circle r="26" fill="#3a3d45"/>
+      <polygon points="-7,-11 -7,11 11,0" fill="#e6e8ee"/>
+    </g>
+    <g id="btn-doc">
+      <circle r="26" fill="#3a3d45"/>
+      <path d="M-8 -12 H4 L9 -7 V12 H-8 Z" fill="#e6e8ee"/>
+      <rect x="-4" y="-2" width="9" height="2.2" fill="#3a3d45"/>
+      <rect x="-4" y="3" width="9" height="2.2" fill="#3a3d45"/>
+    </g>
+    <g id="btn-gear">
+      <circle r="26" fill="#3a3d45"/>
+      <g fill="#e6e8ee">
+        <circle r="10"/>
+        <rect x="-2.5" y="-15" width="5" height="30"/>
+        <rect x="-15" y="-2.5" width="30" height="5"/>
+        <rect x="-2.5" y="-15" width="5" height="30" transform="rotate(45)"/>
+        <rect x="-15" y="-2.5" width="30" height="5" transform="rotate(45)"/>
+      </g>
+      <circle r="4.5" fill="#3a3d45"/>
+    </g>
+    <g id="actions">
+      <use href="#btn-play" x="0" y="0"/>
+      <use href="#btn-doc" x="66" y="0"/>
+      <use href="#btn-gear" x="132" y="0"/>
+    </g>
+  </defs>
+
+  <!-- background -->
+  <rect width="1800" height="600" fill="#1f2126"/>
+
+  <!-- title block -->
+  <rect x="72" y="200" width="140" height="6" fill="#e87d0d"/>
+  <text x="72" y="286" fill="#ffffff" font-size="74" font-weight="700" letter-spacing="-1.5">Script Manager Pro</text>
+  <text x="72" y="342" fill="#b8bcc6" font-size="30">Organize, edit and run your Python scripts</text>
+  <text x="72" y="382" fill="#b8bcc6" font-size="30">from a Blender sidebar.</text>
+
+  <!-- floating documents -->
+  <use href="#doc" x="745" y="102"/>
+  <use href="#doc" x="745" y="238"/>
+  <use href="#doc" x="745" y="374"/>
+
+  <!-- connectors (orange, one right angle, dots at ends) -->
+  <g stroke="#e87d0d" stroke-width="5" fill="none">
+    <path d="M830 152 H948 V168 H1040"/>
+    <path d="M830 288 H948 V304 H1040"/>
+    <path d="M830 424 H948 V440 H1040"/>
+  </g>
+  <g fill="#e87d0d">
+    <circle cx="830" cy="152" r="8"/><circle cx="1040" cy="168" r="8"/>
+    <circle cx="830" cy="288" r="8"/><circle cx="1040" cy="304" r="8"/>
+    <circle cx="830" cy="424" r="8"/><circle cx="1040" cy="440" r="8"/>
+  </g>
+
+  <!-- panel -->
+  <rect x="1040" y="66" width="690" height="430" rx="10" fill="#2c2f35" stroke="#8a8e97" stroke-width="3"/>
+  <!-- header bar -->
+  <rect x="1058" y="84" width="654" height="40" rx="6" fill="#4a4d55"/>
+
+  <!-- rows -->
+  <g>
+    <!-- row 1 -->
+    <rect x="1058" y="142" width="654" height="56" rx="6" fill="#25272c"/>
+    <use href="#star" x="1078" y="155" fill="none" stroke="#b8bcc6" stroke-width="2.5"/>
+    <rect x="1132" y="158" width="330" height="26" rx="4" fill="#4a4d55"/>
+    <use href="#actions" x="1560" y="170"/>
+
+    <!-- row 2 -->
+    <rect x="1058" y="210" width="654" height="56" rx="6" fill="#25272c"/>
+    <use href="#star" x="1078" y="223" fill="none" stroke="#b8bcc6" stroke-width="2.5"/>
+    <rect x="1132" y="226" width="330" height="26" rx="4" fill="#4a4d55"/>
+    <use href="#actions" x="1560" y="238"/>
+
+    <!-- row 3 (active) -->
+    <rect x="1058" y="278" width="654" height="56" rx="6" fill="#e87d0d"/>
+    <use href="#star" x="1078" y="291" fill="#ffffff"/>
+    <rect x="1132" y="294" width="330" height="26" rx="4" fill="#f2b27a"/>
+    <use href="#actions" x="1560" y="306"/>
+
+    <!-- row 4 -->
+    <rect x="1058" y="346" width="654" height="56" rx="6" fill="#25272c"/>
+    <use href="#star" x="1078" y="359" fill="none" stroke="#b8bcc6" stroke-width="2.5"/>
+    <rect x="1132" y="362" width="330" height="26" rx="4" fill="#4a4d55"/>
+    <use href="#actions" x="1560" y="374"/>
+
+    <!-- row 5 -->
+    <rect x="1058" y="414" width="654" height="56" rx="6" fill="#25272c"/>
+    <use href="#star" x="1078" y="427" fill="none" stroke="#b8bcc6" stroke-width="2.5"/>
+    <rect x="1132" y="430" width="330" height="26" rx="4" fill="#4a4d55"/>
+    <use href="#actions" x="1560" y="442"/>
+  </g>
+</svg>
