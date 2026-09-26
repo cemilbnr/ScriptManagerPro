@@ -147,5 +147,4 @@ Found a bug or have an idea? Open an [issue](../../issues). Pull requests are we
 
 ## License
 
-Script Manager Pro is free software, released under the [GPL-3.0-or-later](LICENSE) license.
-Copyright 2026 [Cemil Berk](https://github.com/cemilbnr).
+Script Manager Pro is free and open source software by [Cemil Berk](https://github.com/cemilbnr), released under the [GPL-3.0-or-later](LICENSE) license.
