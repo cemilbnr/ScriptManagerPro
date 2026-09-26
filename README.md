@@ -139,14 +139,13 @@ my_scripts/                      # a library folder you added
 
 ## Permissions
 
-| Permission | Reason |
-|------------|--------|
-| `files` | Read, run and save scripts in the selected library folders |
+The extension asks for a single permission, **files**, so it can read, run and save scripts in the folders you add. It never touches the network and writes nothing outside your script folders.
+
+## Feedback
+
+Found a bug or have an idea? Open an [issue](../../issues). Pull requests are welcome.
 
 ## License
 
-[GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.html)
-
-<p align="center">
-  Made by <a href="https://github.com/cemilbnr"><b>Cemil Berk</b></a>
-</p>
+Script Manager Pro is free software, released under the [GPL-3.0-or-later](LICENSE) license.
+Copyright 2026 [Cemil Berk](https://github.com/cemilbnr).
