@@ -14,11 +14,9 @@
   Run them, edit them and save them back, all from a sidebar in Blender.
 </p>
 
-<!-- GIF 1: Hero. 3D Viewport sidebar, click Play on a script, it runs. 5-8 sec.
 <p align="center">
   <img src="docs/gifs/overview.gif" alt="Overview" width="800">
 </p>
--->
 
 ---
 
@@ -53,11 +51,9 @@
 2. Click **Add Folder** and point it to a folder with your `.py` scripts.
 3. Press **Refresh**. Done.
 
-<!-- GIF 2: Setup. Add Folder, pick a path, press Refresh, list fills up.
 <p align="center">
   <img src="docs/gifs/setup.gif" alt="Setup" width="800">
 </p>
--->
 
 ## Usage
 
@@ -84,11 +80,9 @@ Every row in the **Scripts** list has four buttons:
 | **Close** | Remove the text block from the `.blend`, the file on disk is kept |
 | **Save as .py…** | Save a brand new text into a script folder and add it to the library |
 
-<!-- GIF 3: Edit workflow. Open in Text Editor, change a line, Update & Save, then Play. 10-15 sec. Most important GIF.
 <p align="center">
   <img src="docs/gifs/edit-and-save.gif" alt="Edit and save" width="800">
 </p>
--->
 
 ### Tags & favorites
 
@@ -97,21 +91,14 @@ Every row in the **Scripts** list has four buttons:
 - Click a tag to filter the list. Double-click a tag to rename it everywhere.
 - **Favorites** and **Untagged** are always available as quick filters.
 
-<!-- GIF 4: Tags. Open settings, add tags, click tag in Tags panel to filter, star a favorite, switch to Favorites.
 <p align="center">
   <img src="docs/gifs/tags.gif" alt="Tags and favorites" width="800">
 </p>
--->
 
 ### Multiple folders
 
 With more than one folder configured, a **Folders** panel appears. Pick a folder to limit the Tags and Scripts lists to that library, or **All** to see everything.
 
-<!-- GIF 5 (optional): Folders. Switch between folders, counts update.
-<p align="center">
-  <img src="docs/gifs/folders.gif" alt="Folders" width="800">
-</p>
--->
 
 ## Preferences
 
