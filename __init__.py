@@ -10,12 +10,13 @@ Extension metadata lives in blender_manifest.toml.
 
 if "utils" in locals():
     import importlib
-    for _mod in (utils, metadata, properties, scanner, preferences, operators, ui):
+    for _mod in (utils, metadata, properties, scanner, preferences, operators, ui, parameters):
         importlib.reload(_mod)
 
-from . import utils, metadata, properties, scanner, preferences, operators, ui
+from . import utils, metadata, properties, scanner, preferences, operators, ui, parameters
 
-_modules = (properties, preferences, operators, ui)
+# parameters (optional @PARAM editing) goes last: its panels are children of ui's.
+_modules = (properties, preferences, operators, ui, parameters)
 
 
 def register():

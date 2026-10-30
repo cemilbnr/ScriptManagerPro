@@ -78,7 +78,7 @@ def register():
     wm.smp_categories = CollectionProperty(type=SMP_CategoryItem)
     wm.smp_active_folder = IntProperty(default=0, update=_active_folder_update)
     wm.smp_active_category = IntProperty(default=0)
-    wm.smp_active_script = IntProperty(default=0)
+    wm.smp_active_script = IntProperty(default=-1)  # -1: no script selected yet
     wm.smp_search_folders = StringProperty(
         name="Search Folders",
         description="Filter the folder list",

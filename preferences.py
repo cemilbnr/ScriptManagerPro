@@ -39,6 +39,20 @@ class SMP_AddonPreferences(AddonPreferences):
         min=1,
         max=100,
     )
+    enable_parameters: BoolProperty(
+        name="Editable Script Parameters",
+        description=(
+            "Show a Parameters panel for module level variables marked with an "
+            "'# @PARAM' comment. Edited values are applied when the script runs; "
+            "the script file itself is never modified"
+        ),
+        default=False,
+    )
+    show_param_descriptions: BoolProperty(
+        name="Show Descriptions",
+        description="Show the description of each parameter under its field",
+        default=True,
+    )
 
     def draw(self, context):
         layout = self.layout
@@ -60,6 +74,9 @@ class SMP_AddonPreferences(AddonPreferences):
             text="Metadata and backups live in <folder>/.script_manager/ of each library",
             icon='INFO',
         )
+
+        from .parameters import ui as params_ui
+        params_ui.draw_preferences(layout, self)
 
 
 _classes = (SMP_ScriptDirItem, SMP_AddonPreferences)
